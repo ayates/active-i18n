@@ -55,11 +55,6 @@ module ActiveI18n
         end
       end
 
-      # Nastyness to get by the massassignment of translatable attributes
-      def sanitize_for_mass_assignment(attributes, role = nil)
-        _mass_assignment_sanitizer.sanitize(attributes, mass_assignment_authorizer(role)+translatable_attributes_in(attributes))
-      end
-
     end # InstanceMethods
   end # ActiveRecord
 end # ActiveI18n
