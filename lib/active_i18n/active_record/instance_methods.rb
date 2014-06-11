@@ -48,7 +48,7 @@ module ActiveI18n
 
         @translation_store.each_pair do |locale, translation_set|
           translation_set.each_pair do |attribute, value|
-            translation       = self.translations.find_or_create_by_locale_and_attribute_name(locale, attribute)
+            translation       = self.translations.find_or_create_by(locale: locale, attribute_name: attribute)
             translation.value = value
             translation.save
           end
