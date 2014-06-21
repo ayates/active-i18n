@@ -15,8 +15,7 @@ module ActiveI18n
 
         include InstanceMethods
 
-        before_update :save_translations!
-        after_create  :save_translations!
+        after_save :save_translations!
       end
 
     protected
